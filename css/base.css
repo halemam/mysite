@@ -1,0 +1,65 @@
+/* base.css */
+
+/* ===== Variables ===== */
+:root {
+  --bg: #181818;
+  --text: #e0e0e0;
+  --accent: hsl(0, 0%, 100%);
+  --hover: #ffffff;
+  --font: 'Roboto', sans-serif;
+  --transition: 0.3s ease;
+
+  --footer-bg: #222;
+  --footer-text: #aaa;
+}
+
+body.dark {
+  --bg: #111;
+  --text: #eaeaea;
+  --accent: #9ddfff;
+  --hover: #ffffff;
+  --footer-bg: #111;
+  --footer-text: #888;
+}
+
+/* ===== Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  text-align: center;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--hover);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--footer-bg);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  color: var(--footer-text);
+}
+
