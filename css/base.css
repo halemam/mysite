@@ -1,10 +1,10 @@
 /* base.css */
 
-/* ===== Variables ===== */
+/* ===== CSS Variables ===== */
 :root {
   --bg: #181818;
   --text: #e0e0e0;
-  --accent: hsl(0, 0%, 100%);
+  --accent: #ffffff;
   --hover: #ffffff;
   --font: 'Roboto', sans-serif;
   --transition: 0.3s ease;
@@ -22,7 +22,7 @@ body.dark {
   --footer-text: #888;
 }
 
-/* ===== Reset & Base Styles ===== */
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -34,13 +34,23 @@ html {
   font-size: 16px;
 }
 
+/* ===== Body ===== */
 body {
-  background: var(--bg);
+  background: linear-gradient(-45deg, #181818, #1f2633, #12171f, #181818);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
   color: var(--text);
   font-family: var(--font);
   line-height: 1.6;
   text-align: center;
   transition: background var(--transition), color var(--transition);
+}
+
+/* ===== Animated Background Gradient ===== */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ===== Links ===== */
