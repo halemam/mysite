@@ -429,4 +429,47 @@
   }
 }
 
+/* ===== Hamburger Menu ===== */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* Show menu when active */
+.nav-links.show {
+  display: flex;
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    background: #111;
+    border-top: 1px solid #222;
+    padding-top: 1rem;
+  }
+
+  .nav-links li {
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+  }
+}
 
