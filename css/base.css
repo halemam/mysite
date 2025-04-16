@@ -47,12 +47,22 @@ body {
 }
 
 /* ===== Flex Layout Fix for Footer ===== */
+/* Full height layout structure */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
   flex: 1;
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
+
 
 /* ===== Background Animation ===== */
 @keyframes gradientFlow {
