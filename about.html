@@ -10,11 +10,10 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animation.css">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+
+<body class="dark">
   <!-- Navbar -->
   <nav class="navbar qms-fade-in">
     <div class="nav-logo">
@@ -22,14 +21,11 @@
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" class="active">About</a></li>
       <li><a href="blog.html">Blog</a></li>
-      
       <li><a href="resume.html">Resume</a></li>
       <li><a href="connect.html">Connect</a></li>
-      <li>
-        <button class="dark-toggle" onclick="toggleDarkMode()">🌓</button>
-      </li>
+      <li><button class="dark-toggle" onclick="toggleDarkMode()">🌓</button></li>
     </ul>
   </nav>
 
@@ -40,11 +36,8 @@
 
       <div class="bio-text">
         <p><strong>Name’s Sam.</strong> I was born in Damascus, Syria. The early days were real — crowded streets, loud nights, and a life that taught me resilience.</p>
-        
         <p>I lived in Turkey for a few years. Learned what hustle means. Learned what survival means. Then in 2017, I landed in Canada — no English, no roadmap, just a fire inside and the need to start again.</p>
-        
         <p>I taught myself the language. I went back to school. I graduated. I broke into tech. I fell in love with code — not just for the logic, but because it gave me control. A world I could shape. A world I could protect.</p>
-        
         <p>Cybersecurity is where I started. But I don’t stop there. I’m building systems. I'm building my name. I’m building a future that’s mine — one line of code, one stretch of road at a time.</p>
       </div>
 
@@ -57,9 +50,11 @@
         </ul>
       </div>
 
-      <div class="driving-visual qms-slide-up">
-        <img src="images/sam-driving.jpg" alt="Sam driving at night" class="driving-image">
-        <p class="map-caption">"Some people meditate. I downshift and disappear."</p>
+      <!-- Quote Only -->
+      <div class="quote-box qms-slide-up" style="margin-top: 3rem;">
+        <blockquote>
+          <p>"Some people meditate. I downshift and disappear."</p>
+        </blockquote>
       </div>
     </section>
   </main>
@@ -69,7 +64,7 @@
     <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
   </footer>
 
-  <!-- Dark Mode + Year Script -->
+  <!-- Scripts -->
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
@@ -85,4 +80,3 @@
   </script>
 </body>
 </html>
-
