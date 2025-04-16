@@ -114,6 +114,11 @@
   box-shadow: 0 0 10px hsla(210, 70.1%, 58%, 0.99);
 }
 
+.social-link.linkedin:hover {
+  background-color: #0a66c2;
+  box-shadow: 0 0 10px #0a66c2;
+}
+
 /*–––––––––––––––––––––– BLOG ––––––––––––––––––––––*/
 
 .blog-grid {
