@@ -429,14 +429,42 @@
   }
 }
 
-/* ===== Hamburger Menu ===== */
+/* ===== Hamburger Menu Setup ===== */
 .hamburger {
   display: none;
+  font-size: 2rem;
   background: none;
   border: none;
-  font-size: 2rem;
   color: var(--accent);
   cursor: pointer;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid #333;
+  }
+
+  .nav-links li {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* Show menu when active */
