@@ -2,19 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Connect With Me</title>
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Font Awesome for icons -->
+  <title>Connect With Me - Sam Alemam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-  <header>
-    <!-- include your navbar here if needed -->
-  </header>
 
+<body class="dark">
+  <!-- Navbar -->
+  <nav class="navbar qms-fade-in">
+    <div class="nav-logo">
+      <a href="index.html">Sam Alemam</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="connect.html" class="active">Connect</a></li>
+      <li><button class="dark-toggle" onclick="toggleDarkMode()">🌓</button></li>
+    </ul>
+  </nav>
+
+  <!-- Content -->
   <main>
     <section class="connect-section qms-fade-in">
-      <h2 class="section-title">Want to talk tech, cars, or life?</h2>
+      <h2 class="section-title">Want to talk tech, cars, or life? </h2>
       <p class="subtext">No contact forms, just vibes. Catch me here 👇</p>
 
       <div class="social-links">
@@ -30,13 +49,33 @@
         <a href="https://github.com/halemam" target="_blank" class="social-link github">
           <i class="fab fa-github"></i> GitHub
         </a>
+        <a href="https://www.linkedin.com/in/sam-alemam-2a7408360" target="_blank" class="social-link linkedin">
+          <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
       </div>
+
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Sam Alemam. Built with 💻 and dreams.</p>
+  <!-- Footer -->
+  <footer class="footer qms-slide-up">
+    <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark");
+      }
+      document.getElementById("year").textContent = new Date().getFullYear();
+    };
+  </script>
 </body>
 </html>
 
