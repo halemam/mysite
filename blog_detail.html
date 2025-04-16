@@ -2,45 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog Post Title</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <!-- include your navbar here if needed -->
-  </header>
+  <title>Blog Post - Sam Alemam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="dark">
+  <!-- Navbar -->
+  <nav class="navbar qms-fade-in">
+    <div class="nav-logo">
+      <a href="index.html">Sam Alemam</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="connect.html">Connect</a></li>
+      <li><button class="dark-toggle" onclick="toggleDarkMode()">🌓</button></li>
+    </ul>
+  </nav>
+
+  <!-- Blog Post Content -->
   <main>
     <section class="qms-fade-in">
-      <h2 class="section-title">How I Built My Static Website with GitHub Pages</h2>
-      <p class="subtext">April 15, 2025</p>
+      <h2 class="section-title">How I Built My Website with GitHub Pages</h2>
+      <p class="subtext">Published April 2025</p>
 
       <article class="blog-post-content">
-        <p>This blog post goes into detail about how I converted my Django-powered site into a fully static version, ready to be deployed on GitHub Pages.</p>
-        <p>Using clean HTML, CSS, and JavaScript, I rebuilt each section with smooth animations and no backend requirements.</p>
+        <p>I started off building my site in Django — templates, views, and the full backend. But I realized most of what I needed was just clean, fast HTML with a nice design.</p>
+
+        <p>So I converted everything into static pages, hosted it on GitHub Pages for free, and kept the futuristic glow and animations I liked. No more server dependencies. Just vibes and clean code.</p>
+
+        <p>This page you're reading now is built with love, CSS, and a touch of rebellion. 🚀</p>
       </article>
 
       <hr class="glow-line">
 
+      <!-- Comments -->
       <div class="comments-section">
         <h3>💬 Comments</h3>
-
-        <ul class="comment-list">
-          <li>
-            <strong>Jane</strong> <small>on Apr 15, 2025 12:00</small>
-            <p>This is super helpful! I’ll try it for my own site.</p>
-          </li>
-          <li>
-            <strong>Ali</strong> <small>on Apr 15, 2025 13:24</small>
-            <p>Legend. I didn’t know GitHub Pages could look this good.</p>
-          </li>
-        </ul>
+        <p>No comments yet. Be the first to drop one.</p>
       </div>
 
-      <!-- Fake comment form (non-functional) -->
+      <!-- Comment Form -->
       <form class="comment-form">
-        <p><input type="text" placeholder="Your Name" required></p>
-        <p><textarea placeholder="Leave a comment..." required></textarea></p>
+        <input type="text" placeholder="Your Name" required>
+        <textarea placeholder="Write your comment..." rows="4" required></textarea>
         <button type="submit" class="btn-glow">Submit</button>
       </form>
 
@@ -48,9 +63,25 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Sam Alemam. Built with 💻 and dreams.</p>
+  <!-- Footer -->
+  <footer class="footer qms-slide-up">
+    <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark");
+      }
+      document.getElementById("year").textContent = new Date().getFullYear();
+    };
+  </script>
 </body>
 </html>
 
