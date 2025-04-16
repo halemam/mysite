@@ -1,6 +1,6 @@
 /* base.css */
 
-/* ===== CSS Variables ===== */
+/* ===== Root Variables ===== */
 :root {
   --bg: #181818;
   --text: #e0e0e0;
@@ -22,19 +22,19 @@ body.dark {
   --footer-text: #888;
 }
 
-/* ===== Reset ===== */
+/* ===== Reset & Global ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== Body ===== */
 body {
   background: linear-gradient(-45deg, #181818, #1f2633, #12171f, #181818);
   background-size: 400% 400%;
@@ -46,7 +46,15 @@ body {
   transition: background var(--transition), color var(--transition);
 }
 
-/* ===== Animated Background Gradient ===== */
+/* ===== Flex Layout Fix for Footer ===== */
+main {
+  flex: 1;
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== Background Animation ===== */
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -72,4 +80,3 @@ a:hover {
   font-size: 0.85rem;
   color: var(--footer-text);
 }
-
