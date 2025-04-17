@@ -11,7 +11,22 @@
 <body class="dark">
 
   <!-- Navbar Include -->
-  <div include-html="/components/navbar.html"></div>
+  <nav class="navbar qms-fade-in">
+  <div class="nav-logo">
+    <a href="index.html">Sam Alemam</a>
+  </div>
+
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  <ul class="nav-links" id="navMenu">
+      <li><a href="/index.html">Home</a></li>
+          <li><a href="/pages/about.html">About</a></li>
+          <li><a href="/pages/resume.html">Resume</a></li>
+          <li><a href="/pages/connect.html">Contact</a></li>
+          <li><a href="/blog/blog.html">Blog</a></li>
+    <li><button class="dark-toggle" onclick="toggleDarkMode()">🌓</button></li>
+  </ul>
+</nav>
 
   <!-- Blog Post Content -->
   <main class="container qms-fade-in" style="padding-top: 4rem;">
