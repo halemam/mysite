@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Post – Sam Alemam</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/animation.css" />
+</head>
+<body class="dark">
+
+  <!-- Navbar Include -->
+  <div include-html="/components/navbar.html"></div>
+
+  <!-- Blog Post Content -->
+  <main class="container qms-fade-in" style="padding-top: 4rem;">
+    <section class="blog-wrapper">
+      <div id="blog-post" class="blog-post-content">
+        <p>Loading article...</p>
+      </div>
+
+      <!-- Back to Blog Link -->
+      <div style="margin-top: 3rem;">
+        <a href="/blog/blog.html" class="btn-glow">← Back to Blog</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Include -->
+  <footer class="footer qms-slide-up">
+    <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
+  </footer>
+
+  <!-- JavaScript to Load Blog Post -->
+  <script>
+    // Auto update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Load blog post content
+    const params = new URLSearchParams(window.location.search);
+    const postSlug = params.get("post");
+
+    if (postSlug) {
+      fetch(`/blog/posts/${postSlug}.html`)
+        .then(response => {
+          if (!response.ok) throw new Error("Post not found.");
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById("blog-post").innerHTML = html;
+        })
+        .catch(() => {
+          document.getElementById("blog-post").innerHTML = "<h2>Post not found 😢</h2><p>Looks like this article doesn’t exist yet.</p>";
+        });
+    } else {
+      document.getElementById("blog-post").innerHTML = "<h2>No post selected.</h2><p>Please go back and choose a blog post to read.</p>";
+    }
+
+    // Optional: Include navbar/footer dynamically
+    document.querySelectorAll('[include-html]').forEach(async (el) => {
+      const file = el.getAttribute('include-html');
+      if (file) {
+        const res = await fetch(file);
+        if (res.ok) el.innerHTML = await res.text();
+      }
+    });
+  </script>
+
+</body>
+</html>
