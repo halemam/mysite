@@ -13,14 +13,24 @@
   --footer-text: #aaa;
 }
 
-body.dark {
-  --bg: #111;
-  --text: #eaeaea;
-  --accent: #9ddfff;
-  --hover: #ffffff;
-  --footer-bg: #111;
-  --footer-text: #888;
+body {
+  background: #ffffff;
+  color: #111111;
 }
+
+body.dark {
+  background: #181818;
+  color: #e0e0e0;
+}
+
+a {
+  color: #222;
+}
+
+body.dark a {
+  color: #e0e0e0;
+}
+
 
 /* ===== Reset & Global ===== */
 * {
