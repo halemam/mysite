@@ -103,22 +103,42 @@
   padding: 0.5rem 1rem;
   border: 1px solid #333;
   border-radius: 8px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.social-link i {
-  font-size: 1.2rem;
-}
-
+/* Glow and background on hover */
 .social-link:hover {
-  background-color: #1a1a1a;
-  box-shadow: 0 0 10px hsla(210, 70.1%, 58%, 0.99);
+  transform: scale(1.05);
+}
+
+/* Individual platform styles */
+.social-link.facebook:hover {
+  background-color: #1877f2;
+  box-shadow: 0 0 10px #1877f2;
+}
+
+.social-link.instagram:hover {
+  background-color: #e1306c;
+  box-shadow: 0 0 10px #e1306c;
+}
+
+.social-link.x:hover {
+  background-color: #000;
+  box-shadow: 0 0 10px #000;
+}
+
+.social-link.github:hover {
+  background-color: #333;
+  box-shadow: 0 0 10px #333;
 }
 
 .social-link.linkedin:hover {
   background-color: #0a66c2;
   box-shadow: 0 0 10px #0a66c2;
 }
+
  
 
 
