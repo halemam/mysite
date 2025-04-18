@@ -129,7 +129,11 @@ social-link.twitter:hover {
   background-color: #1877f2;
   box-shadow: 0 0 10px #1877f2;
 }
-
+.social-link.linkedin:hover {
+  background-color: #0a66c2;
+  box-shadow: 0 0 10px #0a66c2;
+}
+ 
 
 
 /*–––––––––––––––––––––– BLOG ––––––––––––––––––––––*/
