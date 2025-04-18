@@ -115,20 +115,6 @@
   box-shadow: 0 0 10px hsla(210, 70.1%, 58%, 0.99);
 }
 
-social-link.twitter:hover {
-  background-color: #1da1f2;
-  box-shadow: 0 0 10px #1da1f2;
-}
-
-.social-link.instagram:hover {
-  background-color: #e1306c;
-  box-shadow: 0 0 10px #e1306c;
-}
-
-.social-link.facebook:hover {
-  background-color: #1877f2;
-  box-shadow: 0 0 10px #1877f2;
-}
 .social-link.linkedin:hover {
   background-color: #0a66c2;
   box-shadow: 0 0 10px #0a66c2;
