@@ -86,15 +86,16 @@
 
 /*–––––––––––––––––––––– SOCIAL LINKS ––––––––––––––––––––––*/
 
-.social-link.facebook:hover {
-  background-color: #1877f2;
-  box-shadow: 0 0 10px #1877f2;
-   display: flex;
+.social-links {
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
-    display: flex;
+}
+
+.social-link {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   color: #fff;
@@ -102,85 +103,32 @@
   border: 1px solid #333;
   border-radius: 8px;
   transition: all 0.3s;
-    font-size: 1.2rem;
-  
+}
+
+.social-link i {
+  font-size: 1.2rem;
+}
+
+.social-link:hover {
+  background-color: #1a1a1a;
+  box-shadow: 0 0 10px hsla(210, 70.1%, 58%, 0.99);
+}
+
+social-link.twitter:hover {
+  background-color: #1da1f2;
+  box-shadow: 0 0 10px #1da1f2;
 }
 
 .social-link.instagram:hover {
   background-color: #e1306c;
   box-shadow: 0 0 10px #e1306c;
-   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-    display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: 1px solid #333;
-  border-radius: 8px;
-  transition: all 0.3s;
-    font-size: 1.2rem;
 }
 
-.social-link.x:hover,
-.social-link.twitter:hover {
-  background-color: #000000;
-  box-shadow: 0 0 10px #000000;
-   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-    display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: 1px solid #333;
-  border-radius: 8px;
-  transition: all 0.3s;
-    font-size: 1.2rem;
+.social-link.facebook:hover {
+  background-color: #1877f2;
+  box-shadow: 0 0 10px #1877f2;
 }
 
-.social-link.github:hover {
-  background-color: #333;
-  box-shadow: 0 0 10px #333;
-   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-    display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: 1px solid #333;
-  border-radius: 8px;
-  transition: all 0.3s;
-    font-size: 1.2rem;
-}
-.social-link.linkedin:hover {
-  background-color: #0a66c2;
-  box-shadow: 0 0 10px #0a66c2;
-   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-    display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: 1px solid #333;
-  border-radius: 8px;
-  transition: all 0.3s;
-    font-size: 1.2rem;
-}
 
 
 /*–––––––––––––––––––––– BLOG ––––––––––––––––––––––*/
