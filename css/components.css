@@ -144,63 +144,101 @@
 
 /*–––––––––––––––––––––– BLOG ––––––––––––––––––––––*/
 
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  column-gap: 2rem;
-}
+/*–––––––––––––––––––––– BLOG AS A BOOK ––––––––––––––––––––––*/
 
-.blog-card {
-  background: #1a1a2e;
-  padding: 1.5rem;
+.blog-book {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
   border-radius: 10px;
-  box-shadow: 0 0 10px #0ff4;
-  transition: transform 0.2s;
-  color: #fff;
-  margin-bottom: 2rem;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px hsla(210, 70.1%, 58%, 0.99);
-}
-
-.blog-post-content {
-  padding: 1rem 0;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.03);
+  font-family: 'Georgia', serif;
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.9;
+  color: #dcdcdc;
 }
 
-.comments-section {
-  margin-top: 3rem;
-  padding-top: 1rem;
+.blog-post-content p:first-of-type::first-letter {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #9ddfff;
+  float: left;
+  line-height: 1;
+  padding-right: 0.2rem;
 }
 
-.comment-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
+.blog-post-content h1,
+.blog-post-content h2,
+.blog-post-content h3 {
+  font-family: 'Merriweather', serif;
+  margin: 2rem 0 1rem;
+  color: #ffffff;
 }
 
-.comment-list li {
-  background: #111;
+.blog-post-content h2 {
+  font-size: 1.7rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.3rem;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.blog-post-content ul li,
+.blog-post-content ol li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-content pre,
+.blog-post-content code {
+  position: relative;
+  background: #14141e;
+  color: #9ddfff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
   padding: 1rem;
   border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 8px #0ff3;
+  overflow-x: auto;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+  margin: 1.5rem 0;
+  text-align: left;
 }
 
-.comment-form input,
-.comment-form textarea,
-.comment-form select {
-  width: 100%;
-  padding: 0.7rem;
-  border-radius: 6px;
-  border: 1px solid #333;
-  margin-bottom: 1rem;
-  background: #1a1a1a;
-  color: #fff;
+.blog-post-content pre::after {
+  content: "📋 Copy";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #9ddfff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.blog-post-content pre::after:hover {
+  background: rgba(0, 255, 255, 0.2);
+}
+
+.blog-post-content p code {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffc;
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.blog-post-content hr.divider {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 2.5rem 0;
 }
 
 /*–––––––––––––––––––––– TIMELINE (RESUME) ––––––––––––––––––––––*/
@@ -526,27 +564,4 @@
   }
 }
 
-/* BLOG CODE STYLING */
-.blog-post-content pre,
-.blog-post-content code {
-  background: #1e1e2f;
-  color: #9ddfff;
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  padding: 1rem;
-  border-radius: 10px;
-  overflow-x: auto;
-  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
-  margin: 1.5rem 0;
-  text-align: left;
-}
-
-.blog-post-content p code {
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffefb3;
-  padding: 0.2rem 0.4rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-}
 
