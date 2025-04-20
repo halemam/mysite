@@ -526,3 +526,27 @@
   }
 }
 
+/* BLOG CODE STYLING */
+.blog-post-content pre,
+.blog-post-content code {
+  background: #1e1e2f;
+  color: #9ddfff;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.blog-post-content p code {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffefb3;
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
