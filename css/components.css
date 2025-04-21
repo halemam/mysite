@@ -168,6 +168,7 @@
   font-family: 'Georgia', serif;
   line-height: 1.8;
   color: #e0e0e0;
+  text-align: left; /* ensures content aligns like a book */
 }
 
 .blog-wrapper h1 {
@@ -176,6 +177,7 @@
   font-family: 'Playfair Display', serif;
   color: #fff;
   line-height: 1.2;
+  text-align: left; /* titles left-aligned */
 }
 
 .blog-wrapper .blog-meta {
@@ -183,6 +185,7 @@
   color: #aaa;
   margin-bottom: 2.5rem;
   font-style: italic;
+  text-align: left;
 }
 
 .blog-wrapper h2,
@@ -193,12 +196,14 @@
   border-bottom: 1px solid rgba(0, 255, 255, 0.1);
   padding-bottom: 0.4rem;
   font-weight: 600;
+  text-align: left;
 }
 
 .blog-wrapper p,
 .blog-wrapper li {
   font-size: 1.05rem;
   margin-bottom: 1.2rem;
+  text-align: left;
 }
 
 .blog-wrapper ul,
@@ -239,6 +244,7 @@
   margin: 2rem 0;
   white-space: pre;
   border: 1px solid rgba(0, 255, 255, 0.08);
+  text-align: left;
 }
 
 .terminal-box::before {
@@ -265,13 +271,14 @@
 }
 
 
-/*–––––––––––––––––––––– HEADINGS INSIDE TERMINAL (ESCAPED HTML) ––––––––––––––––––––––*/
+/*–––––––––––––––––––––– GENERAL CODE TAGS ––––––––––––––––––––––*/
 
 code {
   font-family: 'Fira Code', monospace;
   font-size: 0.95rem;
   color: #dcdcdc;
   background: none;
+  text-align: left;
 }
 
 
