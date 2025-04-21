@@ -19,9 +19,7 @@
     <div class="nav-logo">
       <a href="/index.html">Sam Alemam</a>
     </div>
-
     <button class="hamburger" onclick="toggleMenu()">☰</button>
-
     <ul class="nav-links" id="navMenu">
       <li><a href="/index.html">Home</a></li>
       <li><a href="/blog/blog.html">Blog</a></li>
@@ -35,7 +33,6 @@
   <!-- Blog Post Layout -->
   <main class="blog-post-page qms-fade-in">
     <section class="blog-wrapper">
-
       <div id="blog-post" class="blog-post-content">
         <p>Loading article...</p>
       </div>
@@ -46,12 +43,23 @@
     </section>
   </main>
 
- 
+  <!-- Footer BEFORE scripts -->
+  <footer class="footer qms-slide-up">
+    <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
+  </footer>
 
   <!-- Scripts -->
   <script>
-    // Update year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Navbar toggles
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("show");
+    }
 
     // Load blog post by slug
     const params = new URLSearchParams(window.location.search);
@@ -67,35 +75,26 @@
           document.getElementById("blog-post").innerHTML = html;
         })
         .catch(() => {
-          document.getElementById("blog-post").innerHTML = "<h2>Post not found 😢</h2><p>Looks like this article doesn’t exist yet.</p>";
+          document.getElementById("blog-post").innerHTML = "<h2>Post not found 😢</h2><p>This article doesn’t exist yet.</p>";
         });
     } else {
       document.getElementById("blog-post").innerHTML = "<h2>No post selected.</h2><p>Please go back and choose a blog post to read.</p>";
     }
 
-    // Navbar toggles
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
-    }
-
-    function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.toggle("show");
-    }
-
-    // On page load
+    // Apply dark mode + update footer year after DOM is ready
     window.onload = function () {
       if (localStorage.getItem("darkMode") === "true") {
         document.body.classList.add("dark");
       } else {
         document.body.classList.remove("dark");
       }
+
+      const year = document.getElementById("year");
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
     };
   </script>
 
-  <footer class="footer qms-slide-up">
-    <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
-  
 </body>
 </html>
