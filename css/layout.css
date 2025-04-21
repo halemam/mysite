@@ -91,28 +91,5 @@ main {
   font-size: 0.95rem;
 }
 
-.terminal-box {
-  background-color: #1e1e1e;
-  color: #dcdcdc;
-  padding: 1.5rem;
-  border-radius: 10px;
-  font-family: "Courier New", monospace;
-  font-size: 14px;
-  overflow-x: auto;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-  position: relative;
-}
-
-.terminal-box::before {
-  content: "Terminal";
-  position: absolute;
-  top: -12px;
-  left: 10px;
-  background: #1e1e1e;
-  color: #0ff;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
 
 
