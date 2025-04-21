@@ -228,6 +228,57 @@
   border-radius: 4px;
 }
 
+.blog-post-wrapper {
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 3rem;
+  background: #0f0f1a;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+  color: #eee;
+}
+
+.blog-post-wrapper h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.blog-post-wrapper .post-meta {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.blog-post-wrapper h2,
+.blog-post-wrapper h3 {
+  color: #0ff;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+  padding-bottom: 0.3rem;
+}
+
+.blog-post-wrapper p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* Optional: Add a light paper-style border inside the dark layout */
+.blog-post-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.02);
+}
+
 
 /*–––––––––––––––––––––– TIMELINE (RESUME) ––––––––––––––––––––––*/
 
