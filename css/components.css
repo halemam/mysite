@@ -145,75 +145,100 @@
 
 /*–––––––––––––––––––––– BLOG ––––––––––––––––––––––*/
 
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  column-gap: 2rem;
+/*–––––––––––––––––––––– BLOG POST PAGE WRAPPER ––––––––––––––––––––––*/
+
+.blog-post-page {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: #0f0f1a;
+  min-height: 100vh;
 }
 
-.blog-card {
-  background: #1a1a2e;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0ff4;
-  transition: transform 0.2s;
-  color: #fff;
-  margin-bottom: 2rem;
-}
 
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px hsla(210, 70.1%, 58%, 0.99);
-}
+/*–––––––––––––––––––––– BLOG ARTICLE WRAPPER ––––––––––––––––––––––*/
 
-.blog-post-content {
-  padding: 1rem 0;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.comments-section {
-  margin-top: 3rem;
-  padding-top: 1rem;
-}
-
-.comment-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
-}
-
-.comment-list li {
-  background: #111;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 8px #0ff3;
-}
-
-.comment-form input,
-.comment-form textarea,
-.comment-form select {
+.blog-wrapper {
+  max-width: 850px;
   width: 100%;
-  padding: 0.7rem;
-  border-radius: 6px;
-  border: 1px solid #333;
-  margin-bottom: 1rem;
-  background: #1a1a1a;
-  color: #fff;
+  background: #141414;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.05);
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+  color: #e0e0e0;
 }
+
+.blog-wrapper h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.blog-wrapper .blog-meta {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.blog-wrapper h2,
+.blog-wrapper h3 {
+  color: #0ff;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+  padding-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.blog-wrapper p,
+.blog-wrapper li {
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+.blog-wrapper ul,
+.blog-wrapper ol {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.blog-wrapper a {
+  color: #0ff;
+  text-decoration: underline;
+}
+
+.blog-wrapper a:hover {
+  color: #bfa046;
+}
+
+.divider {
+  margin: 2.5rem 0;
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/*–––––––––––––––––––––– TERMINAL BOX (CODE BLOCKS) ––––––––––––––––––––––*/
 
 .terminal-box {
   background-color: #1e1e1e;
   color: #dcdcdc;
   padding: 1.5rem;
   border-radius: 10px;
-  font-family: "Courier New", monospace;
-  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
   overflow-x: auto;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.08);
   position: relative;
+  margin: 2rem 0;
+  white-space: pre;
+  border: 1px solid rgba(0, 255, 255, 0.08);
 }
 
 .terminal-box::before {
@@ -226,57 +251,27 @@
   font-size: 12px;
   padding: 2px 6px;
   border-radius: 4px;
+  opacity: 0.8;
 }
 
-.blog-post-wrapper {
-  max-width: 800px;
-  margin: 5rem auto;
-  padding: 3rem;
-  background: #0f0f1a;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
-  font-family: 'Georgia', serif;
-  line-height: 1.8;
-  color: #eee;
+/* Scrollbar for terminal box (WebKit) */
+.terminal-box::-webkit-scrollbar {
+  height: 6px;
 }
 
-.blog-post-wrapper h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
-  color: #fff;
-  line-height: 1.2;
+.terminal-box::-webkit-scrollbar-thumb {
+  background-color: #0ff3;
+  border-radius: 10px;
 }
 
-.blog-post-wrapper .post-meta {
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-bottom: 2rem;
-}
 
-.blog-post-wrapper h2,
-.blog-post-wrapper h3 {
-  color: #0ff;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-  padding-bottom: 0.3rem;
-}
+/*–––––––––––––––––––––– HEADINGS INSIDE TERMINAL (ESCAPED HTML) ––––––––––––––––––––––*/
 
-.blog-post-wrapper p {
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
-}
-
-/* Optional: Add a light paper-style border inside the dark layout */
-.blog-post-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  pointer-events: none;
-  border-radius: 12px;
-  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.02);
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #dcdcdc;
+  background: none;
 }
 
 
