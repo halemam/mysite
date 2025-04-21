@@ -1,4 +1,4 @@
-/* base.css */
+/*–––––––––––––––––––––– BASE.CSS ––––––––––––––––––––––*/
 
 /* ===== Root Variables ===== */
 :root {
@@ -13,26 +13,8 @@
   --footer-text: #aaa;
 }
 
-body {
-  background: #ffffff;
-  color: #111111;
-}
 
-body.dark {
-  background: #181818;
-  color: #e0e0e0;
-}
-
-a {
-  color: #222;
-}
-
-body.dark a {
-  color: #e0e0e0;
-}
-
-
-/* ===== Reset & Global ===== */
+/* ===== Reset & Global Layout ===== */
 * {
   margin: 0;
   padding: 0;
@@ -41,48 +23,39 @@ body.dark a {
 
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-}
-
-body {
-  background: linear-gradient(-45deg, #181818, #1f2633, #12171f, #181818);
-  background-size: 400% 400%;
-  animation: gradientFlow 15s ease infinite;
-  color: var(--text);
   font-family: var(--font);
   line-height: 1.6;
   text-align: center;
   transition: background var(--transition), color var(--transition);
 }
 
-/* ===== Flex Layout Fix for Footer ===== */
-/* Full height layout structure */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+/* ===== Default Light Mode ===== */
+body {
+  background: linear-gradient(-45deg, #f5f5f5, #e0e0e0, #fafafa, #f5f5f5);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  color: #111111;
 }
 
-page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* ===== Dark Mode Support ===== */
+body.dark {
+  background: linear-gradient(-45deg, #181818, #1f2633, #12171f, #181818);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  color: var(--text);
 }
 
-main {
-  flex: 1;
-}
-
-
-/* ===== Background Animation ===== */
+/* ===== Gradient Background Animation ===== */
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 
 /* ===== Links ===== */
 a {
@@ -95,11 +68,34 @@ a:hover {
   color: var(--hover);
 }
 
+body.dark a {
+  color: #0ff;
+}
+
+body.dark a:hover {
+  color: #bfa046;
+}
+
+
+/* ===== Layout Content Wrapper ===== */
+main {
+  flex: 1;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 /* ===== Footer ===== */
 .footer {
   background: var(--footer-bg);
+  color: var(--footer-text);
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.85rem;
-  color: var(--footer-text);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  transition: background var(--transition);
 }
