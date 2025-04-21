@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/blog.css"> <!-- Add this -->
+  <link rel="stylesheet" href="/css/blog.css">
   <link rel="stylesheet" href="/css/animation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="dark">
-
+<div class="page-wrapper">
   <!-- Navbar -->
   <nav class="navbar qms-fade-in">
     <div class="nav-logo">
@@ -34,13 +34,13 @@
     </ul>
   </nav>
 
-  <!-- Blog Listing Section -->
-  <main class="blog-post-page qms-fade-in">
-    <section class="blog-wrapper">
+  <!-- Main Blog Section -->
+  <main>
+    <section class="blog-wrapper qms-fade-in">
       <h2 class="section-title">📝 My Blog</h2>
       <p class="subtext">Sometimes I write. Sometimes I rant. Sometimes I just gotta say it.</p>
 
-      <!-- Blog Cards -->
+      <!-- Blog Posts -->
       <article class="blog-preview blog-card qms-slide-up">
         <h2 class="blog-title">
           <a href="/blog/blog_detail.html?post=email-signature-guide">
@@ -73,42 +73,40 @@
         <p class="blog-snippet">Resumes are dead. Here's why I made a website instead...</p>
         <a href="/blog/blog_detail.html?post=why-i-made-this-website" class="read-more">Read more →</a>
       </article>
-
     </section>
   </main>
 
- <!-- Footer BEFORE scripts -->
+  <!-- Footer -->
   <footer class="footer qms-slide-up">
     <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
   </footer>
+</div>
 
+<!-- Scripts -->
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+  }
 
-  <!-- Dark Mode + Year Script -->
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("show");
+  }
+
+  window.onload = function () {
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
     }
 
-    function toggleMenu() {
-      const menu = document.getElementById("navMenu");
-      menu.classList.toggle("show");
+    const year = document.getElementById("year");
+    if (year) {
+      year.textContent = new Date().getFullYear();
     }
+  };
+</script>
 
-    window.onload = function () {
-      if (localStorage.getItem("darkMode") === "true") {
-        document.body.classList.add("dark");
-      } else {
-        document.body.classList.remove("dark");
-      }
-
-      const year = document.getElementById("year");
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
-    };
-  </script>
-  
-  
 </body>
 </html>
