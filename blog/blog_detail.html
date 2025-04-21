@@ -4,55 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog Post – Sam Alemam</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
   <link rel="stylesheet" href="/css/animation.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body class="dark">
 
-  <!-- Navbar Include -->
+  <!-- Navbar -->
   <nav class="navbar qms-fade-in">
-  <div class="nav-logo">
-    <a href="index.html">Sam Alemam</a>
-  </div>
+    <div class="nav-logo">
+      <a href="/index.html">Sam Alemam</a>
+    </div>
 
-  <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-  <ul class="nav-links" id="navMenu">
+    <ul class="nav-links" id="navMenu">
       <li><a href="/index.html">Home</a></li>
       <li><a href="/blog/blog.html">Blog</a></li>
       <li><a href="/pages/about.html">About</a></li>
       <li><a href="/pages/resume.html">Resume</a></li>
       <li><a href="/pages/connect.html">Contact</a></li>
-    <li><button class="dark-toggle" onclick="toggleDarkMode()">🌓</button></li>
-  </ul>
-</nav>
+      <li><button class="dark-toggle" onclick="toggleDarkMode()">🌓</button></li>
+    </ul>
+  </nav>
 
-  <!-- Blog Post Content -->
-  <main class="container qms-fade-in" style="padding-top: 4rem;">
+  <!-- Blog Post Layout -->
+  <main class="blog-post-page qms-fade-in">
     <section class="blog-wrapper">
-       <div id="blog-post" class="blog-post-content">
+
+      <div id="blog-post" class="blog-post-content">
         <p>Loading article...</p>
       </div>
 
-      <!-- Back to Blog Link -->
-      <div style="margin-top: 3rem; margin-bottom: 5rem; text-align: center;">
-  <a href="/blog/blog.html" class="btn-glow"> Back to Blog</a>
-</div>
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="/blog/blog.html" class="btn-glow">← Back to Blog</a>
+      </div>
     </section>
   </main>
 
-  <!-- Footer Include -->
+  <!-- Footer -->
   <footer class="footer qms-slide-up">
     <p>© <span id="year"></span> Sam Alemam. Built with 💻 and dreams.</p>
   </footer>
 
-  <!-- JavaScript to Load Blog Post -->
+  <!-- Scripts -->
   <script>
-    // Auto update year
+    // Update year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Load blog post content
+    // Load blog post by slug
     const params = new URLSearchParams(window.location.search);
     const postSlug = params.get("post");
 
@@ -72,14 +76,25 @@
       document.getElementById("blog-post").innerHTML = "<h2>No post selected.</h2><p>Please go back and choose a blog post to read.</p>";
     }
 
-    // Optional: Include navbar/footer dynamically
-    document.querySelectorAll('[include-html]').forEach(async (el) => {
-      const file = el.getAttribute('include-html');
-      if (file) {
-        const res = await fetch(file);
-        if (res.ok) el.innerHTML = await res.text();
+    // Navbar toggles
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("navMenu");
+      menu.classList.toggle("show");
+    }
+
+    // On page load
+    window.onload = function () {
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
       }
-    });
+    };
   </script>
 
 </body>
