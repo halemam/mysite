@@ -281,6 +281,45 @@ code {
   text-align: left;
 }
 
+/*–––––––––––––––––––––– RESPONSIVE TWEAKS ––––––––––––––––––––––*/
+
+@media screen and (max-width: 768px) {
+  .blog-wrapper {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+
+  .blog-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .blog-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-wrapper h3 {
+    font-size: 1.2rem;
+  }
+
+  .terminal-box {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blog-wrapper {
+    padding: 1.5rem;
+  }
+
+  .terminal-box {
+    font-size: 0.85rem;
+  }
+
+  .blog-wrapper h1 {
+    font-size: 1.8rem;
+  }
+}
 
 /*–––––––––––––––––––––– TIMELINE (RESUME) ––––––––––––––––––––––*/
 
