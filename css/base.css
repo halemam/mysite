@@ -13,12 +13,12 @@
   --footer-text: #aaa;
 }
 
-.body {
+body {
   background: #ffffff;
   color: #111111;
 }
 
-.body.dark {
+body.dark {
   background: #181818;
   color: #e0e0e0;
 }
@@ -39,13 +39,13 @@ body.dark a {
   box-sizing: border-box;
 }
 
-.html, body {
+html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.body {
+body {
   background: linear-gradient(-45deg, #181818, #1f2633, #12171f, #181818);
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
@@ -58,7 +58,7 @@ body.dark a {
 
 /* ===== Flex Layout Fix for Footer ===== */
 /* Full height layout structure */
-.html, body {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -66,13 +66,13 @@ body.dark a {
   flex-direction: column;
 }
 
-.page-wrapper {
+page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.main {
+main {
   flex: 1;
 }
 
