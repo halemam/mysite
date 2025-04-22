@@ -7,7 +7,49 @@
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/components.css" />
   <link rel="stylesheet" href="/css/animation.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    /* Enhanced terminal box styles */
+    .terminal-box {
+      background: #1e1e2d;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      overflow-x: auto;
+      box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+      position: relative;
+      border-top: 30px solid #252538;
+    }
+    
+    .terminal-box::before {
+      content: 'terminal';
+      position: absolute;
+      top: -25px;
+      left: 15px;
+      color: #aaa;
+      font-size: 0.8rem;
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .terminal-box pre {
+      margin: 0;
+      white-space: pre-wrap;
+    }
+    
+    .terminal-box code {
+      color: #f8f8f2;
+      background: transparent;
+      font-family: inherit;
+    }
+    
+    /* Color highlighting for code */
+    .terminal-box .hljs-attr { color: #ff79c6; }
+    .terminal-box .hljs-string { color: #f1fa8c; }
+    .terminal-box .hljs-tag { color: #ff5555; }
+  </style>
 </head>
 <body class="dark">
 
@@ -15,147 +57,92 @@
 
   <article class="blog-wrapper blog-post-content">
 
-    <h1>📩 How to Create a Professional Email Signature (Step-by-Step Guide for Beginners)</h1>
-    <p class="blog-meta">Posted by Sam Alemam · April 20, 2025</p>
+    <h1>📩 How to Create a Professional Email Signature</h1>
+    <p class="blog-meta">Posted by Sam Alemam · April 20, 2025 · 5 min read</p>
 
-    <p>Your email signature is more than just your name — it's your digital handshake. It adds professionalism, reinforces your brand, and helps people reach you faster. In this guide, you’ll learn how to create a clean, modern signature that works on Gmail, Outlook, and Apple Mail. No coding experience? You’re still good.</p>
+    <p>Your email signature is more than just your name — it's your digital handshake. Here's how to create a clean, modern signature that works everywhere.</p>
 
-    <hr class="divider" />
+    <div class="terminal-box">
+      <pre><code class="language-html">&lt;!-- Example Signature HTML --&gt;
+&lt;table style="font-family: Arial; border-top: 1px solid #0ff;"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;strong&gt;Sam Alemam&lt;/strong&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Tech Dreamer | Code Crafter&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    </div>
 
     <h2>💡 Why You Need an Email Signature</h2>
     <ul>
-      <li>It makes your emails look professional</li>
-      <li>Gives people your info without extra steps</li>
-      <li>Reinforces your brand or personal identity</li>
-      <li>Saves you from retyping the same info over and over</li>
+      <li>Adds instant professionalism</li>
+      <li>Saves time with contact details</li>
+      <li>Reinforces your personal brand</li>
     </ul>
 
-    <h2>✍️ Step 1: What Should Be in Your Signature?</h2>
+    <h2>✍️ Step-by-Step Guide</h2>
 
-    <h3>✅ Must-Haves:</h3>
-    <ul>
-      <li>Your full name</li>
-      <li>Job title or role</li>
-      <li>Phone number</li>
-      <li>Email address</li>
-      <li>Website or portfolio link</li>
-    </ul>
-
-    <h3>✨ Optional (But Nice to Have):</h3>
-    <ul>
-      <li>Company logo</li>
-      <li>Short quote or tagline</li>
-      <li>Social media links</li>
-      <li>Profile photo</li>
-    </ul>
-
-    <h3>🛑 Avoid:</h3>
-    <ul>
-      <li>Too many colors or fancy fonts</li>
-      <li>Massive logos or big images</li>
-      <li>Heavy files — keep it lightweight for email loading</li>
-    </ul>
-
-    <h2>📄 Step 2: Write It Out in Plain Text First</h2>
+    <h3>1. Plain Text Version</h3>
     <div class="terminal-box">
       <pre><code>Sam Alemam
-CEO, Zen Tech Center
-Phone: +1 (825) 777-0217
-Email: ceo@zentechcenter.com
-Web: www.zentechcenter.com
-Built with code and dreams.</code></pre>
+Tech Dreamer | Code Crafter
+Phone: +1 (555) 123-4567
+Email: sam@alemam.dev
+Website: alemam.dev</code></pre>
     </div>
 
-    <h2>🖼️ Step 3: Upload Your Logo</h2>
-    <p>Upload your logo to your website or a CDN. You’ll want a direct link (ending in <code>.png</code> or <code>.jpg</code>):</p>
+    <h3>2. HTML Version</h3>
     <div class="terminal-box">
-      <pre><code>https://zentechcenter.com/assets/logo-email.png</code></pre>
-    </div>
-
-    <h2>🛠️ Step 4: Turn It Into HTML</h2>
-    <p>🛠️ Copy this block exactly as-is. Do <strong>not</strong> paste raw HTML — it must be escaped like this to show properly on your blog:</p>
-
-    <div class="terminal-box">
-      <pre><code>
-&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;max-width:600px;font-family:'Segoe UI',sans-serif;font-size:14px;color:#333;&quot;&gt;
+      <pre><code class="language-html">&lt;table cellpadding="0" cellspacing="0" style="font-family: Arial;"&gt;
   &lt;tr&gt;
-    &lt;td style=&quot;padding:10px;&quot;&gt;
-      &lt;table style=&quot;width:100%;&quot;&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;padding-right:15px;&quot;&gt;
-            &lt;img src=&quot;https://zentechcenter.com/assets/logo-email.png&quot; width=&quot;80&quot; style=&quot;display:block;border-radius:8px;&quot; /&gt;
-          &lt;/td&gt;
-          &lt;td&gt;
-            &lt;div style=&quot;font-weight:bold;color:#bfa046;&quot;&gt;Sam Alemam&lt;/div&gt;
-            &lt;div style=&quot;color:#bfa046;&quot;&gt;CEO, Zen Tech Center&lt;/div&gt;
-            &lt;div style=&quot;margin-top:8px;&quot;&gt;
-              &lt;strong&gt;Phone:&lt;/strong&gt; +1 (825) 777-0217&lt;br/&gt;
-              &lt;strong&gt;Email:&lt;/strong&gt; ceo@zentechcenter.com&lt;br/&gt;
-              &lt;strong&gt;Web:&lt;/strong&gt; www.zentechcenter.com
-            &lt;/div&gt;
-            &lt;div style=&quot;margin-top:10px;font-size:12px;color:#888;&quot;&gt;
-              &lt;em&gt;Built with code and dreams.&lt;/em&gt;
-            &lt;/div&gt;
-          &lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/table&gt;
+    &lt;td style="padding-bottom: 8px;"&gt;
+      &lt;strong style="color: #0ff;"&gt;Sam Alemam&lt;/strong&gt;
     &lt;/td&gt;
   &lt;/tr&gt;
-&lt;/table&gt;
-      </code></pre>
+  &lt;tr&gt;
+    &lt;td style="padding-bottom: 12px;"&gt;
+      Tech Dreamer | Code Crafter
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style="font-size: 0.9em;"&gt;
+      Phone: +1 (555) 123-4567&lt;br&gt;
+      Email: sam@alemam.dev&lt;br&gt;
+      Website: alemam.dev
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
     </div>
 
-    <h2>📧 Step 5: Install It in Gmail</h2>
-    <ol>
-      <li>Go to Gmail → Settings → <strong>See All Settings</strong></li>
-      <li>Scroll to <strong>Signature</strong> and click “Create New”</li>
-      <li>Open your saved HTML file in a browser, highlight it, and copy</li>
-      <li>Paste it into the Gmail signature editor</li>
-      <li>Click <strong>Save Changes</strong> at the bottom</li>
-    </ol>
+    <h3>3. Installation Commands</h3>
+    <div class="terminal-box">
+      <pre><code class="language-bash"># For Gmail users:
+1. Settings → See all settings → Signature
+2. Paste HTML code
+3. Save changes
 
-    <h2>🍎 Step 6: Install It in Apple Mail (macOS)</h2>
-    <ol>
-      <li>Open Mail → Settings → Signatures → Create a new signature</li>
-      <li>Close Mail completely</li>
-      <li>Go to <code>~/Library/Mail/</code> → Find your signature file</li>
-      <li>Open it and replace the contents with your HTML version</li>
-      <li>Save it, lock the file (⌘ + I → check “Locked”), then reopen Mail</li>
-    </ol>
+# For Apple Mail:
+1. Mail → Preferences → Signatures
+2. Create new signature
+3. Paste HTML</code></pre>
+    </div>
 
-    <h2>📨 Step 7: Add to Outlook</h2>
-    <ol>
-      <li>Open Outlook → Settings → Mail → Compose and Reply</li>
-      <li>Create a new signature</li>
-      <li>Paste your HTML signature into the editor</li>
-      <li>Set it as your default (optional) and save</li>
-    </ol>
-
-    <h2>✅ Step 8: Test It</h2>
-    <ul>
-      <li>Send a test email to yourself</li>
-      <li>Check it on both desktop and mobile</li>
-      <li>Make sure links and images work properly</li>
-      <li>Tweak padding, fonts, or colors if needed</li>
-    </ul>
-
-    <h2>✨ Bonus Tips</h2>
-    <ul>
-      <li>Add clickable social icons (via Font Awesome)</li>
-      <li>Use brand colors that match your site or logo</li>
-      <li>Create versions for light and dark mode themes</li>
-      <li>Include a downloadable vCard file</li>
-    </ul>
-
-    <hr class="divider" />
-
-    <h2>You're All Set</h2>
-    <p>You now have a sleek, professional signature that works across major platforms. Whether you're running a business, freelancing, or just want to level up your email game — this is a power move that takes less than 20 minutes to implement.</p>
-
-    <p>Need a custom one built with animations, icons, or dark mode switching? <a href="/pages/connect.html">Hit me up</a>. I’ll make it happen 😎</p>
+    <div class="author-card">
+      <img src="/assets/sam-profile.jpg" alt="Sam Alemam">
+      <div>
+        <strong>Sam Alemam</strong><br>
+        <span>If you found this helpful, consider sharing it!</span>
+      </div>
+    </div>
 
   </article>
 </main>
+
+<!-- Add highlight.js for syntax coloring -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
 </body>
 </html>
