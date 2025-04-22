@@ -31,15 +31,15 @@
     </ul>
   </nav>
 
-  <!-- Blog Post Layout -->
-  <main class="blog-post-page qms-fade-in">
-    <section class="blog-wrapper">
-
+  <!-- Main Blog Content -->
+  <main class="blog-post-page qms-fade-in" style="flex: 1; display: flex; flex-direction: column;">
+    <section class="blog-wrapper" style="flex: 1; display: flex; flex-direction: column;">
+      
       <!-- Read Time -->
-      <div class="blog-meta" id="read-time" style="margin-bottom: 1.5rem; font-style: italic; color: #aaa;"></div>
+      <div id="read-time" class="blog-meta" style="margin-bottom: 1rem; font-style: italic; color: #aaa;"></div>
 
-      <!-- Blog Content -->
-      <div id="blog-post" class="blog-post-content">
+      <!-- Blog Post Content -->
+      <div id="blog-post" class="blog-post-content" style="flex: 1; min-height: 60vh;">
         <p>Loading article...</p>
       </div>
 
@@ -52,11 +52,10 @@
         </div>
       </div>
 
-      <!-- Back Button -->
+      <!-- Back to Blog -->
       <div style="margin-top: 3rem; text-align: center;">
         <a href="/blog/blog.html" class="btn-glow">← Back to Blog</a>
       </div>
-
     </section>
   </main>
 
@@ -78,12 +77,10 @@
     menu.classList.toggle("show");
   }
 
-  // Read time estimator
   function estimateReadTime(text) {
     const wordsPerMinute = 200;
     const words = text.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wordsPerMinute);
-    return `${time} min read`;
+    return `${Math.ceil(words / wordsPerMinute)} min read`;
   }
 
   // Load blog post by slug
@@ -99,7 +96,7 @@
       .then(html => {
         document.getElementById("blog-post").innerHTML = html;
 
-        // Calculate and display read time
+        // Calculate and show read time
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = html;
         const textContent = tempDiv.textContent || tempDiv.innerText || "";
@@ -113,7 +110,7 @@
     document.getElementById("blog-post").innerHTML = "<h2>No post selected.</h2><p>Please go back and choose a blog post to read.</p>";
   }
 
-  // Footer year
+  // On Load: Update year and dark mode
   window.onload = function () {
     const year = document.getElementById("year");
     if (year) {
@@ -127,6 +124,5 @@
     }
   };
 </script>
-
 </body>
 </html>
