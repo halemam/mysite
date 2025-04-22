@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="/css/blog.css" />
   <link rel="stylesheet" href="/css/animation.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    /* TEMPORARY DEBUGGING - REMOVE LATER */
+    /* * { border: 1px solid rgba(255, 0, 0, 0.3) !important; } */
+  </style>
 </head>
 <body class="dark">
 <div class="page-wrapper">
@@ -32,28 +36,28 @@
   </nav>
 
   <!-- Main Blog Content -->
-  <main class="blog-post-page qms-fade-in" style="flex: 1; display: flex; flex-direction: column;">
-    <section class="blog-wrapper" style="flex: 1; display: flex; flex-direction: column;">
+  <main class="blog-post-page qms-fade-in">
+    <section class="blog-wrapper">
       
       <!-- Read Time -->
       <div id="read-time" class="blog-meta" style="margin-bottom: 1rem; font-style: italic; color: #aaa;"></div>
 
       <!-- Blog Post Content -->
-      <div id="blog-post" class="blog-post-content" style="flex: 1; min-height: 60vh;">
+      <div id="blog-post" class="blog-post-content">
         <p>Loading article...</p>
       </div>
 
       <!-- Author Info -->
-      <div class="author-card" style="margin-top: 3rem; display: flex; align-items: center; gap: 1rem;">
-        <img src="/assets/sam-profile.jpg" alt="Sam Alemam" style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #0ff;">
+      <div class="author-card">
+        <img src="/assets/sam-profile.jpg" alt="Sam Alemam">
         <div>
-          <strong style="color: #fff;">Sam Alemam</strong><br>
-          <span style="color: #aaa;">Tech Dreamer. Code Crafter. Street Philosopher.</span>
+          <strong>Sam Alemam</strong><br>
+          <span>Tech Dreamer. Code Crafter. Street Philosopher.</span>
         </div>
       </div>
 
       <!-- Back to Blog -->
-      <div style="margin-top: 3rem; text-align: center;">
+      <div class="back-to-blog">
         <a href="/blog/blog.html" class="btn-glow">← Back to Blog</a>
       </div>
     </section>
@@ -69,7 +73,9 @@
 <script>
   function toggleDarkMode() {
     document.body.classList.toggle("dark");
-    localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("darkMode", isDark);
+    document.querySelector(".dark-toggle").textContent = isDark ? "☀️" : "🌙";
   }
 
   function toggleMenu() {
@@ -95,8 +101,6 @@
       })
       .then(html => {
         document.getElementById("blog-post").innerHTML = html;
-
-        // Calculate and show read time
         const tempDiv = document.createElement("div");
         tempDiv.innerHTML = html;
         const textContent = tempDiv.textContent || tempDiv.innerText || "";
@@ -104,23 +108,19 @@
         document.getElementById("read-time").textContent = readTime;
       })
       .catch(() => {
-        document.getElementById("blog-post").innerHTML = "<h2>Post not found 😢</h2><p>This article doesn’t exist yet.</p>";
+        document.getElementById("blog-post").innerHTML = `
+          <h2>Post Not Found</h2>
+          <p>Try <a href="/blog/blog.html">browsing other articles</a>.</p>
+        `;
       });
-  } else {
-    document.getElementById("blog-post").innerHTML = "<h2>No post selected.</h2><p>Please go back and choose a blog post to read.</p>";
   }
 
-  // On Load: Update year and dark mode
+  // On Load
   window.onload = function () {
-    const year = document.getElementById("year");
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
-
+    document.getElementById("year").textContent = new Date().getFullYear();
     if (localStorage.getItem("darkMode") === "true") {
       document.body.classList.add("dark");
-    } else {
-      document.body.classList.remove("dark");
+      document.querySelector(".dark-toggle").textContent = "☀️";
     }
   };
 </script>
