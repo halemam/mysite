@@ -1,10 +1,9 @@
 /* ====================== CORE LAYOUT FIXES ====================== */
-/* Add these at the TOP of your base.css */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background: #0f0f1a; /* Dark theme fallback */
+  min-height: 100vh;
+  background: #0f0f1a; /* Dark theme base */
 }
 
 .page-wrapper {
@@ -13,38 +12,215 @@ html, body {
   flex-direction: column;
 }
 
-main {
+/* ====================== BLOG POST PAGE ====================== */
+.blog-post-page {
   flex: 1;
   padding: 4rem 2rem;
-}
-
-footer {
-  margin-top: auto;
-  width: 100%;
-}
-
-/* ====================== YOUR EXISTING STYLES ====================== */
-/* Keep all your original styles below, but REMOVE these conflicting rules: */
-/* .blog-post-page { min-height: 100vh; } ← DELETE this line (now handled by main) */
-
-/* ====================== DARK MODE ENHANCEMENT ====================== */
-body.dark {
   background: #0f0f1a;
-  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ====================== FOOTER FIXES ====================== */
-.footer {
-  padding: 2rem;
-  text-align: center;
+.blog-wrapper {
+  max-width: 850px;
+  width: 100%;
   background: #141414;
-  border-top: 1px solid rgba(0, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.08);
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  flex: 1;
 }
 
-/* ====================== DEBUGGING HELPERS ====================== */
-/* Uncomment if you need to visualize layout issues: */
-/*
-.debug * {
-  outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+.blog-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.15);
 }
-*/
+
+/* ====================== TYPOGRAPHY ====================== */
+.blog-wrapper {
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+  color: #e0e0e0;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.blog-wrapper h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.blog-wrapper .blog-meta {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.blog-wrapper h2,
+.blog-wrapper h3 {
+  color: #0ff;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.08);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.blog-wrapper p,
+.blog-wrapper li {
+  font-size: 1.15rem;
+  margin-bottom: 1.6rem;
+}
+
+.blog-wrapper ul,
+.blog-wrapper ol {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.blog-wrapper a {
+  color: #0ff;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.blog-wrapper a:hover {
+  color: #bfa046;
+}
+
+/* ====================== COMPONENTS ====================== */
+.divider {
+  margin: 3rem 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #0ff3, transparent);
+  border-radius: 99px;
+}
+
+.terminal-box {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.08);
+  position: relative;
+  margin: 2rem 0;
+  white-space: pre;
+  border: 1px solid rgba(0, 255, 255, 0.08);
+  text-align: left;
+}
+
+.terminal-box::before {
+  content: "Terminal";
+  position: absolute;
+  top: -12px;
+  left: 10px;
+  background: #1e1e1e;
+  color: #0ff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.terminal-box::-webkit-scrollbar {
+  height: 6px;
+}
+
+.terminal-box::-webkit-scrollbar-thumb {
+  background-color: #0ff3;
+  border-radius: 10px;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #dcdcdc;
+  background: none;
+}
+
+/* ====================== AUTHOR CARD ====================== */
+.author-card {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #0ff;
+}
+
+.author-card strong {
+  color: #fff;
+}
+
+.author-card span {
+  color: #aaa;
+}
+
+/* ====================== BACK BUTTON ====================== */
+.back-to-blog {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media screen and (max-width: 768px) {
+  .blog-post-page {
+    padding: 2rem 1rem;
+  }
+  
+  .blog-wrapper {
+    padding: 2rem;
+  }
+
+  .blog-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .blog-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-wrapper h3 {
+    font-size: 1.2rem;
+  }
+
+  .terminal-box {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blog-wrapper {
+    padding: 1.5rem;
+  }
+
+  .terminal-box {
+    font-size: 0.85rem;
+  }
+
+  .blog-wrapper h1 {
+    font-size: 1.8rem;
+  }
+  
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
