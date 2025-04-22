@@ -104,51 +104,69 @@ html, body {
   border-radius: 99px;
 }
 
-.terminal-box {
-  background-color: #1e1e1e;
-  color: #dcdcdc;
-  padding: 1.5rem;
-  border-radius: 10px;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.95rem;
-  overflow-x: auto;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.08);
-  position: relative;
-  margin: 2rem 0;
-  white-space: pre;
-  border: 1px solid rgba(0, 255, 255, 0.08);
-  text-align: left;
-}
-
-.terminal-box::before {
-  content: "Terminal";
-  position: absolute;
-  top: -12px;
-  left: 10px;
+/* ===== TERMINAL BOX ===== */
+.terminal {
   background: #1e1e1e;
-  color: #0ff;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  opacity: 0.8;
-}
-
-.terminal-box::-webkit-scrollbar {
-  height: 6px;
-}
-
-.terminal-box::-webkit-scrollbar-thumb {
-  background-color: #0ff3;
-  border-radius: 10px;
-}
-
-code {
+  color: #f8f8f2;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
   font-family: 'Fira Code', monospace;
   font-size: 0.95rem;
-  color: #dcdcdc;
-  background: none;
+  line-height: 1.5;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-top: 24px solid #2d2d2d;
 }
 
+.terminal::before {
+  content: 'bash';
+  position: absolute;
+  top: -20px;
+  left: 12px;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.terminal-header {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #2d2d2d;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.terminal-dot-red { background: #ff5f56; }
+.terminal-dot-yellow { background: #ffbd2e; }
+.terminal-dot-green { background: #27c93f; }
+
+/* For line numbers */
+.terminal.with-line-numbers {
+  counter-reset: line;
+  padding-left: 3.5rem;
+}
+
+.terminal.with-line-numbers code::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 1rem;
+  color: #555;
+  user-select: none;
+}
 /* ====================== AUTHOR CARD ====================== */
 .author-card {
   margin-top: 3rem;
@@ -203,6 +221,91 @@ code {
   .terminal-box {
     font-size: 0.9rem;
     padding: 1rem;
+  }
+}
+
+/* ===== BLOG CARD STYLES ===== */
+.blog-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.15);
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0ff, #0af);
+}
+
+.blog-card h2 {
+  color: #0ff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.blog-card .post-date {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.blog-card .post-excerpt {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.blog-card .read-more {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.blog-card .read-more:hover {
+  color: #bfa046;
+  transform: translateX(5px);
+}
+
+.blog-card .read-more::after {
+  content: '→';
+  margin-left: 5px;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover .read-more::after {
+  margin-left: 10px;
+}
+
+/* Add this if you want a responsive grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
   }
 }
 
