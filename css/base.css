@@ -2,14 +2,59 @@
 
 /* ===== Root Variables ===== */
 :root {
-  --bg: #181818;
-  --text: #e0e0e0;
-  --accent: #ffffff;
-  --hover: #ffffff;
+  /* Font & Transition */
   --font: 'Roboto', sans-serif;
   --transition: 0.3s ease;
+
+  /* Light Theme Colors */
+  --bg-light-primary: #f5f5f5;
+  --bg-light-secondary: #e0e0e0;
+  --bg-light-tertiary: #fafafa;
+  --text-light: #111111;
+  --accent-light: #bfa046;
+  --hover-light: #d4c46a;
+
+  /* Dark Theme Colors */
+  --bg-dark-primary: #181818;
+  --bg-dark-secondary: #1f2633;
+  --bg-dark-tertiary: #12171f;
+  --text-dark: #e0e0e0;
+  --accent-dark: #ffffff;
+  --hover-dark: #bfa046;
+
+  /* Footer */
   --footer-bg: #222;
   --footer-text: #aaa;
+}
+
+/* ===== Theme Application ===== */
+body {
+  font-family: var(--font);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* Light theme defaults */
+  background: linear-gradient(-45deg, var(--bg-light-primary), var(--bg-light-secondary), var(--bg-light-tertiary), var(--bg-light-primary));
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  color: var(--text-light);
+  /* Accent & hover variables */
+  --accent: var(--accent-light);
+  --hover: var(--hover-light);
+  transition: background var(--transition), color var(--transition);
+}
+
+body.dark,
+html[data-theme="dark"] body {
+  /* Dark theme overrides */
+  background: linear-gradient(-45deg, var(--bg-dark-primary), var(--bg-dark-secondary), var(--bg-dark-tertiary), var(--bg-dark-primary));
+  color: var(--text-dark);
+  --accent: var(--accent-dark);
+  --hover: var(--hover-dark);
 }
 
 /* ===== Reset & Global Layout ===== */
@@ -19,45 +64,8 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-}
+html { height: 100%; }
 
-body {
-  min-height: 100vh; /* Changed from height:100% for better mobile support */
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font);
-  line-height: 1.6;
-  transition: background var(--transition), color var(--transition);
-  margin: 0;
-  padding: 0;
-}
-
-/* ===== Gradient Backgrounds ===== */
-body {
-  background: linear-gradient(-45deg, #f5f5f5, #e0e0e0, #fafafa, #f5f5f5);
-  background-size: 400% 400%;
-  background-attachment: fixed; /* Prevents gradient clipping on scroll */
-  animation: gradientFlow 15s ease infinite;
-  color: #111;
-}
-
-body.dark {
-  background: linear-gradient(-45deg, #181818, #1f2633, #12171f, #181818);
-  background-size: 400% 400%;
-  background-attachment: fixed;
-  animation: gradientFlow 15s ease infinite;
-  color: var(--text);
-}
-
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* ===== Core Layout Structure ===== */
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -66,9 +74,16 @@ body.dark {
 }
 
 main {
-  flex: 1 0 auto; /* Prevents content shrinkage */
+  flex: 1 0 auto;
   width: 100%;
-  position: relative; /* For absolute-positioned children */
+  position: relative;
+}
+
+/* ===== Gradient Animation ===== */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ===== Footer ===== */
@@ -79,9 +94,9 @@ main {
   padding: 2rem 1rem;
   font-size: 0.85rem;
   border-top: 1px solid rgba(255,255,255,0.05);
-  transition: background var(--transition);
-  flex-shrink: 0; /* Prevents footer shrinkage */
-  margin-top: auto; /* Ensures footer sticks to bottom */
+  transition: background var(--transition), color var(--transition);
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 /* ===== Links ===== */
@@ -96,12 +111,14 @@ a:hover {
   opacity: 0.9;
 }
 
-body.dark a {
-  color: #0ff;
+body.dark a,
+html[data-theme="dark"] a {
+  color: var(--accent);
 }
 
-body.dark a:hover {
-  color: #bfa046;
+body.dark a:hover,
+html[data-theme="dark"] a:hover {
+  color: var(--hover);
 }
 
 /* ===== Scrollbar (Optional) ===== */
@@ -125,7 +142,6 @@ body.dark a:hover {
     background: white !important;
     color: black !important;
   }
-  
   .footer {
     display: none;
   }
