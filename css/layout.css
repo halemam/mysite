@@ -22,7 +22,8 @@ main {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
-}
+ flex: 1;
+} 
 
 /* Hero Section */
 .hero-section {
@@ -89,21 +90,5 @@ main {
   font-style: italic;
   color: #aaa;
   font-size: 0.95rem;
-}
-/* Ensure the wrapper takes full height and lays out children vertically */
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Let main content grow, so footer is pushed down */
-main {
-  flex: 1;
-}
-
-/* Push footer to bottom when there's extra space */
-footer {
-  margin-top: auto;
 }
 
