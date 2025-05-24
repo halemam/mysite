@@ -1,6 +1,6 @@
-/* layout.css */
+/*–––––––––––––––––––––– LAYOUT.CSS ––––––––––––––––––––––*/
 
-/* Section Title */
+/* ===== Section Title ===== */
 .section-title {
   font-size: 2.5rem;
   text-align: center;
@@ -8,23 +8,23 @@
   color: var(--accent);
 }
 
-/* Subtext / Subtitle */
+/* ===== Subtext / Subtitle ===== */
 .subtext {
   text-align: center;
   font-size: 1.1rem;
-  color: #aaa;
+  color: var(--footer-text);
   margin-bottom: 2rem;
   line-height: 1.6;
 }
 
-/* Main Layout */
+/* ===== Main Layout ===== */
 main {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ main {
   padding-top: 3rem;
 }
 
-/* About Section */
+/* ===== About Section ===== */
 .about-section {
   max-width: 850px;
   margin: auto;
@@ -42,54 +42,47 @@ main {
   text-align: left;
 }
 
-/* Bio Paragraphs */
+/* ===== Bio Paragraphs ===== */
 .bio-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
-  color: var(--text);
+  color: inherit;
 }
 
-/* Highlights List */
+/* ===== Highlights List ===== */
 .about-highlights {
   margin-top: 3rem;
 }
-
 .about-highlights h3 {
-  color: hsla(210, 70.1%, 58%, 0.99);
+  color: var(--accent);
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
-
 .about-highlights ul {
   list-style: none;
   padding-left: 0;
 }
-
 .about-highlights ul li {
   margin-bottom: 0.8rem;
   font-size: 1.05rem;
 }
 
-/* Driving Visual Image */
+/* ===== Driving Visual Image ===== */
 .driving-visual {
   margin-top: 3rem;
   text-align: center;
 }
-
 .driving-visual img {
   max-width: 90%;
   border-radius: 10px;
-  box-shadow: 0 0 18px #4994dffd;
+  box-shadow: 0 0 18px var(--accent);
 }
 
-/* Map Caption Styling */
+/* ===== Map Caption Styling ===== */
 .map-caption {
   margin-top: 0.6rem;
   font-style: italic;
-  color: #aaa;
+  color: var(--footer-text);
   font-size: 0.95rem;
 }
-
-
-
