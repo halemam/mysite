@@ -1,6 +1,6 @@
-/*–––––––––––––––––––––– LAYOUT.CSS ––––––––––––––––––––––*/
+/* layout.css */
 
-/* ===== Section Title ===== */
+/* Section Title */
 .section-title {
   font-size: 2.5rem;
   text-align: center;
@@ -8,23 +8,23 @@
   color: var(--accent);
 }
 
-/* ===== Subtext / Subtitle ===== */
+/* Subtext / Subtitle */
 .subtext {
   text-align: center;
   font-size: 1.1rem;
-  color: var(--footer-text);
+  color: #aaa;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
 
-/* ===== Main Layout ===== */
+/* Main Layout */
 main {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
 }
 
-/* ===== Hero Section ===== */
+/* Hero Section */
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ main {
   padding-top: 3rem;
 }
 
-/* ===== About Section ===== */
+/* About Section */
 .about-section {
   max-width: 850px;
   margin: auto;
@@ -42,7 +42,7 @@ main {
   text-align: left;
 }
 
-/* ===== Bio Paragraphs ===== */
+/* Bio Paragraphs */
 .bio-text p {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -50,56 +50,43 @@ main {
   color: var(--text);
 }
 
-/* ===== Highlights List ===== */
+/* Highlights List */
 .about-highlights {
   margin-top: 3rem;
 }
+
 .about-highlights h3 {
-  color: var(--accent);
+  color: hsla(210, 70.1%, 58%, 0.99);
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
+
 .about-highlights ul {
   list-style: none;
   padding-left: 0;
 }
+
 .about-highlights ul li {
   margin-bottom: 0.8rem;
   font-size: 1.05rem;
 }
 
-/* ===== Driving Visual Image ===== */
+/* Driving Visual Image */
 .driving-visual {
   margin-top: 3rem;
   text-align: center;
 }
+
 .driving-visual img {
   max-width: 90%;
   border-radius: 10px;
-  box-shadow: 0 0 18px var(--accent);
+  box-shadow: 0 0 18px #4994dffd;
 }
 
-/* ===== Map Caption Styling ===== */
+/* Map Caption Styling */
 .map-caption {
   margin-top: 0.6rem;
   font-style: italic;
-  color: var(--footer-text);
+  color: #aaa;
   font-size: 0.95rem;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  main,
-  .hero-section,
-  .about-section,
-  .section,
-  .map-section {
-    padding: 2rem 0;
-  }
-  .section-title {
-    font-size: 2rem;
-  }
-  .subtext {
-    font-size: 1rem;
-  }
 }
