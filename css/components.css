@@ -1,28 +1,26 @@
-/* components.css */
-/*–––––––––––––––––––––– GLOBAL ––––––––––––––––––––––*/
+/*–––––––––––––––––––––– COMPONENTS.CSS ––––––––––––––––––––––*/
 
+/* ===== Buttons ===== */
 .btn-glow {
   padding: 0.6rem 1.2rem;
-  background: hsla(210, 70.1%, 58%, 0.99);
-  color: #000;
+  background: var(--accent);
+  color: var(--bg-primary);
   border: none;
   border-radius: 5px;
-  box-shadow: 0 0 10px hsla(210, 70.1%, 58%, 0.99);
+  box-shadow: 0 0 10px var(--accent);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all var(--transition);
 }
-
 .btn-glow:hover {
-  background: #fff;
-  color: #000;
-  box-shadow: 0 0 20px hsla(210, 70.1%, 58%, 0.99);
+  background: var(--hover);
+  color: var(--bg-primary);
+  box-shadow: 0 0 20px var(--accent);
 }
 
-
-/*–––––––––––––––––––––– NAVBAR ––––––––––––––––––––––*/
-
+/* ===== Navbar ===== */
 .navbar {
-  background: #111;
+  background: var(--bg-primary);
+  color: var(--text-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,63 +28,39 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 0 10px hsla(210, 70.1%, 58%, 0.99);
+  box-shadow: 0 0 10px var(--accent);
 }
-
 .navbar .logo {
   font-size: 1.8rem;
   font-weight: bold;
   color: var(--accent);
 }
-
 .nav-links {
   display: flex;
   gap: 1.5rem;
   list-style: none;
 }
-
 .nav-links li a {
-  color: hsla(210, 70.1%, 58%, 0.99);
+  color: var(--accent);
   font-weight: 500;
-  transition: 0.3s;
+  transition: color var(--transition), text-shadow var(--transition);
 }
-
 .nav-links li a:hover {
-  color: #fff;
-  text-shadow: 0 0 5px hsla(210, 70.1%, 58%, 0.99);
+  color: var(--hover);
+  text-shadow: 0 0 5px var(--accent);
 }
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .nav-links li {
-    margin: 0.5rem 0;
-  }
-}
-
-/*–––––––––––––––––––––– FOOTER ––––––––––––––––––––––*/
-
+/* ===== Footer ===== */
 .footer {
-  background: #222;
+  background: var(--footer-bg);
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.85rem;
-  color: #aaa;
-  border-top: 1px solid #333;
+  color: var(--footer-text);
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/*–––––––––––––––––––––– SOCIAL LINKS ––––––––––––––––––––––*/
-
+/* ===== Social Links ===== */
 .social-links {
   display: flex;
   justify-content: center;
@@ -94,149 +68,128 @@
   gap: 1rem;
   margin-top: 2rem;
 }
-
 .social-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #fff;
+  color: var(--accent);
   padding: 0.5rem 1rem;
-  border: 1px solid #333;
+  border: 1px solid var(--accent);
   border-radius: 8px;
-  transition: all 0.3s ease;
+  background: transparent;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
   text-decoration: none;
   font-weight: 500;
 }
-
-/* Glow and background on hover */
 .social-link:hover {
   transform: scale(1.05);
 }
 
-/* Individual platform styles */
+/* Platform-specific hover */
 .social-link.facebook:hover {
   background-color: #1877f2;
   box-shadow: 0 0 10px #1877f2;
+  color: #fff;
 }
-
 .social-link.instagram:hover {
   background-color: #e1306c;
   box-shadow: 0 0 10px #e1306c;
+  color: #fff;
 }
-
 .social-link.x:hover {
   background-color: #000;
   box-shadow: 0 0 10px #000;
+  color: #fff;
 }
-
 .social-link.github:hover {
   background-color: #333;
   box-shadow: 0 0 10px #333;
+  color: #fff;
 }
-
 .social-link.linkedin:hover {
   background-color: #0a66c2;
   box-shadow: 0 0 10px #0a66c2;
+  color: #fff;
 }
 
-
- 
-
-
-
-/*–––––––––––––––––––––– TIMELINE (RESUME) ––––––––––––––––––––––*/
-
+/* ===== Timeline (Resume) ===== */
 .timeline {
   position: relative;
   margin: 3rem auto;
   padding-left: 2rem;
-  border-left: 2px solid hsla(210, 70.1%, 58%, 0.99);
+  border-left: 2px solid var(--accent);
 }
-
 .timeline-item {
   margin-bottom: 2.5rem;
   position: relative;
 }
-
 .timeline-dot {
   width: 16px;
   height: 16px;
-  background-color: hsla(210, 70.1%, 58%, 0.99);
+  background-color: var(--accent);
   border-radius: 50%;
   position: absolute;
   left: -9px;
   top: 5px;
-  box-shadow: 0 0 10px hsla(210, 70.1%, 58%, 0.99);
+  box-shadow: 0 0 10px var(--accent);
 }
-
 .timeline-content {
   padding-left: 1rem;
 }
-
 .resume-actions {
   text-align: center;
   margin-top: 3rem;
 }
 
-/*–––––––––––––––––––––– GALLERY ––––––––––––––––––––––*/
-
+/* ===== Gallery ===== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1px;
   margin: 0 auto;
   max-width: 1000px;
-  background: #111;
+  background: var(--bg-primary);
 }
-
 .gallery-item {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
 }
-
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition);
   display: block;
 }
-
 .gallery-item:hover img {
   transform: scale(1.05);
 }
-
 .caption {
   display: none;
 }
-
-/* Filters */
 .gallery-filters {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-bottom: 1.5rem;
 }
-
 .gallery-filters a {
   text-decoration: none;
-  color: hsla(210, 70.1%, 58%, 0.99);
+  color: var(--accent);
   padding: 8px 14px;
-  border: 1px solid transparent;
+  border: 1px solid var(--accent);
   border-radius: 6px;
-  transition: 0.2s;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
-
 .gallery-filters a:hover,
 .gallery-filters a.active {
-  background-color: rgba(0, 255, 224, 0.1);
-  border-color: hsla(210, 70.1%, 58%, 0.99);
+  background-color: var(--hover);
+  border-color: var(--accent);
 }
 
-/*–––––––––––––––––––––– MODAL (GALLERY PREVIEW) ––––––––––––––––––––––*/
-
+/* ===== Modal ===== */
 .modal {
   display: none;
   position: fixed;
@@ -249,220 +202,139 @@
   overflow: auto;
   background-color: rgba(15, 15, 15, 0.95);
 }
-
 .modal-content {
   margin: auto;
   display: block;
   max-width: 90%;
   max-height: 80vh;
   border-radius: 10px;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn var(--transition) ease-in-out;
 }
-
 .modal-close {
   position: absolute;
   top: 40px;
   right: 60px;
   font-size: 40px;
-  color: white;
+  color: var(--text-light);
   cursor: pointer;
-  transition: 0.2s;
+  transition: color var(--transition);
 }
-
 .modal-close:hover {
   color: #ff5e5e;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/*–––––––––––––––––––––– EXTRAS ––––––––––––––––––––––*/
-
+/* ===== Extras ===== */
 .map-section {
   margin-top: 2rem;
   text-align: center;
 }
-
 .map-glow {
   max-width: 80%;
   border-radius: 12px;
-  box-shadow: 0 0 30px hsla(210, 70.1%, 58%, 0.99);
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 30px var(--accent);
+  transition: transform var(--transition);
 }
-
 .map-glow:hover {
   transform: scale(1.03);
 }
-
 .map-caption {
   margin-top: 0.8rem;
   font-size: 1rem;
-  color: #aaa;
+  color: var(--footer-text);
   font-style: italic;
 }
-
 .driving-image {
   display: block;
   margin: 2rem auto;
   border-radius: 14px;
-  box-shadow: 0 0 15px hsla(210, 70.1%, 58%, 0.99);
+  box-shadow: 0 0 15px var(--accent);
   max-width: 90%;
 }
-
 .driver-section {
   text-align: center;
   margin-top: 4rem;
 }
 
-/* Quote Box */
+/* ===== Quote Box ===== */
 .quote-box {
   margin-top: 3rem;
   padding: 1.5rem;
-  border-left: 4px solid hsla(210, 70.1%, 58%, 0.99);
-  background: #111;
-  color: #ccc;
+  border-left: 4px solid var(--accent);
+  background: var(--bg-secondary);
+  color: var(--text-light);
   font-style: italic;
-  box-shadow: 0 0 12px #0ff3;
+  box-shadow: 0 0 12px var(--accent);
   border-radius: 10px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
-
 .quote-box footer {
   text-align: right;
   font-size: 0.9rem;
   margin-top: 0.5rem;
-  color: #999;
+  color: var(--footer-text);
 }
 
-
-/* Responsive Fixes for Mobile */
+/* ===== Mobile Responsiveness ===== */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
   }
-
   .nav-links {
     flex-direction: column;
     gap: 1rem;
     width: 100%;
     margin-top: 1rem;
-  }
-
-  .nav-links li {
-    margin: 0;
-    width: 100%;
-    text-align: left;
-  }
-
-  .hero-text h1,
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .subtext {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-
-  .social-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .btn-glow {
-    width: 100%;
-    text-align: center;
-  }
-
-  .quote-box {
-    padding: 1rem;
-    font-size: 1rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-
-  .resume-actions a {
-    display: block;
-    width: 100%;
-  }
-}
-
-/* ===== Hamburger Menu Setup ===== */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--accent);
-  cursor: pointer;
-}
-
-.nav-links.show {
-  display: flex;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #111;
-    width: 100%;
-    padding: 1rem;
-    border-top: 1px solid #333;
-  }
-
-  .nav-links li {
-    padding: 0.5rem 1rem;
-  }
-
-  .nav-links li a {
-    display: block;
-    width: 100%;
-  }
-}
-
-/* Show menu when active */
-.nav-links.show {
-  display: flex;
-}
-
-/* Mobile menu styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-    background: #111;
-    border-top: 1px solid #222;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--footer-text);
     padding-top: 1rem;
   }
-
   .nav-links li {
     padding: 0.5rem 0;
     width: 100%;
     text-align: left;
   }
-
-  .nav-links li a {
+  .hero-text h1,
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .subtext {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  .social-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .btn-glow {
+    width: 100%;
+    text-align: center;
+  }
+  .quote-box {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .resume-actions a {
     display: block;
     width: 100%;
-    padding-left: 1rem;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-links.show {
+    display: flex;
   }
 }
+
+/* ===== Hamburger ===== */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
