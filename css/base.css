@@ -47,6 +47,9 @@ body {
   background-color: var(--color-bg-light);
   color: var(--color-text-light);
   transition: background-color var(--transition), color var(--transition);
+  display: flex;
+flex-direction: column;
+min-height: 100vh;
 }
 
 /* Dark mode */
