@@ -12,7 +12,7 @@
 .subtext {
   text-align: center;
   font-size: 1.1rem;
-  color: var(--footer-text);
+  color: #aaa;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -47,7 +47,7 @@ main {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
-  color: inherit;
+  color: var(--text);
 }
 
 /* ===== Highlights List ===== */
@@ -83,6 +83,23 @@ main {
 .map-caption {
   margin-top: 0.6rem;
   font-style: italic;
-  color: var(--footer-text);
+  color: #aaa;
   font-size: 0.95rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  main,
+  .hero-section,
+  .about-section,
+  .section,
+  .map-section {
+    padding: 2rem 0;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .subtext {
+    font-size: 1rem;
+  }
 }
