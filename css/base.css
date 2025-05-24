@@ -1,159 +1,118 @@
-/*–––––––––––––––––––––– BASE.CSS ––––––––––––––––––––––*/
+/*–––––––––––––––––––––– LAYOUT.CSS ––––––––––––––––––––––*/
 
-/* ===== Root Variables ===== */
-:root {
-  /* Fonts */
-  --font-sans: 'Roboto', sans-serif;
-  --font-mono: 'Fira Code', monospace;
-
-  /* Spacing scale */
-  --space-xxs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-
-  /* Type scale */
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.5rem;
-  --font-size-xxl: 2rem;
-
-  --line-height: 1.6;
-
-  /* Light theme colors */
-  --color-bg-light: #ffffff;
-  --color-text-light: #111111;
-  --color-muted-light: #555555;
-  --color-accent: #bfa046;
-  --color-border-light: #dddddd;
-
-  /* Dark theme colors */
-  --color-bg-dark: #181818;
-  --color-text-dark: #e0e0e0;
-  --color-muted-dark: #aaaaaa;
-  --color-border-dark: #333333;
-
-  /* Transition */
-  --transition: 0.3s ease;
-}
-
-/* ===== Theme Application ===== */
-body {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height);
-  background-color: var(--color-bg-light);
-  color: var(--color-text-light);
-  transition: background-color var(--transition), color var(--transition);
-}
-
-/* Dark mode */
-body.dark,
-html[data-theme="dark"] body {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-dark);
-}
-
-/* ===== Global Reset ===== */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  height: 100%;
-  scroll-behavior: smooth;
-}
-
-/* ===== Utilities ===== */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-md) 0;
-}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ===== Typography ===== */
-body, button, input, select, textarea {
-  font-family: var(--font-sans);
-}
-h1 {
-  font-size: var(--font-size-xxl);
-  margin-bottom: var(--space-md);
-}
-h2 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-sm);
-}
-h3 {
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-xs);
-}
-p, li {
-  margin-bottom: var(--space-sm);
-}
-ul, ol {
-  padding-left: var(--space-lg);
-}
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-a:hover {
-  color: var(--color-accent);
-  opacity: 0.8;
-}
-
-/* ===== Images & Media ===== */
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ===== Layout Helpers ===== */
-.flex {
+/* ===== Core Page Layout & Sticky Footer ===== */
+.page-wrapper {
   display: flex;
-  gap: var(--space-sm);
+  flex-direction: column;
+  min-height: 100vh;
 }
-.grid {
-  display: grid;
-  gap: var(--space-md);
+main {
+  flex: 1 0 auto;
 }
-
-/* ===== Borders ===== */
-hr {
-  border: none;
-  border-top: 1px solid var(--color-border-light);
-  margin: var(--space-lg) 0;
-  opacity: 0.5;
-  transition: border-color var(--transition);
-}
-body.dark hr {
-  border-color: var(--color-border-dark);
+footer {
+  margin-top: auto;
 }
 
-/* ===== Print Styles ===== */
-@media print {
-  body {
-    background: #fff !important;
-    color: #000 !important;
+/* ===== Section Title ===== */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+/* ===== Subtext / Subtitle ===== */
+.subtext {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--footer-text);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ===== Main Layout Container ===== */
+main {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding-top: 3rem;
+}
+
+/* ===== About Section ===== */
+.about-section {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: left;
+}
+
+/* ===== Bio Paragraphs ===== */
+.bio-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+}
+
+/* ===== Highlights List ===== */
+.about-highlights {
+  margin-top: 3rem;
+}
+.about-highlights h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.about-highlights ul {
+  list-style: none;
+  padding-left: 0;
+}
+.about-highlights ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+/* ===== Driving Visual Image ===== */
+.driving-visual {
+  margin-top: 3rem;
+  text-align: center;
+}
+.driving-visual img {
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 18px var(--accent);
+}
+
+/* ===== Map Caption Styling ===== */
+.map-caption {
+  margin-top: 0.6rem;
+  font-style: italic;
+  color: var(--footer-text);
+  font-size: 0.95rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  main,
+  .hero-section,
+  .about-section,
+  .section,
+  .map-section {
+    padding: 2rem 0;
   }
-  hr, hr, .no-print {
-    display: none;
+  .section-title {
+    font-size: 2rem;
+  }
+  .subtext {
+    font-size: 1rem;
   }
 }
