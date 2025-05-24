@@ -22,7 +22,7 @@ main {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
- flex: 1;
+ flex: 1 0 auto
 } 
 
 /* Hero Section */
