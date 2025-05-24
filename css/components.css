@@ -5,7 +5,7 @@
   display: inline-block;
   padding: 0.6rem 1.2rem;
   background-color: var(--accent);
-  color: var(--bg-light);
+  color: var(--bg-primary);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -17,14 +17,14 @@
   transform: translateY(-2px);
 }
 
-/* ===== Forms ===== */
+/* ===== Form Elements ===== */
 input, textarea, select {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid var(--footer-text);
   border-radius: 4px;
-  background: transparent;
-  color: var(--text-light);
+  background-color: transparent;
+  color: var(--text-primary);
   font-family: var(--font);
   transition: border-color var(--transition);
 }
@@ -35,8 +35,8 @@ input:focus, textarea:focus, select:focus {
 
 /* ===== Navbar ===== */
 .navbar {
-  background-color: var(--bg-light);
-  color: var(--text-light);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,7 +56,7 @@ input:focus, textarea:focus, select:focus {
   gap: 1rem;
 }
 .nav-links a {
-  color: var(--text-light);
+  color: var(--text-primary);
   text-decoration: none;
   transition: color var(--transition);
 }
@@ -69,7 +69,7 @@ input:focus, textarea:focus, select:focus {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text-light);
+  color: var(--text-primary);
 }
 @media (max-width: 768px) {
   .hamburger { display: block; }
@@ -98,7 +98,7 @@ input:focus, textarea:focus, select:focus {
 .timeline {
   position: relative;
   margin: 2rem 0;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   border-left: 4px solid var(--accent);
 }
 .timeline-item {
@@ -107,10 +107,37 @@ input:focus, textarea:focus, select:focus {
 }
 .timeline-dot {
   position: absolute;
-  left: -10px;
+  left: -7px;
   top: 2px;
   width: 12px;
   height: 12px;
   background-color: var(--accent);
   border-radius: 50%;
+}
+
+/* ===== Social Links ===== */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.social-link {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.social-link:hover {
+  color: var(--accent);
+}
+
+/* ===== Footer Components ===== */
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
