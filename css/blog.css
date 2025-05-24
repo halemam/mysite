@@ -1,6 +1,4 @@
-/*–––––––––––––––––––––– BLOG.CSS ––––––––––––––––––––––*/
-
-/* ====================== CORE LAYOUT FIXES ====================== */
+ /* ====================== CORE LAYOUT FIXES ====================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -144,10 +142,18 @@ html, body {
   padding-left: 12px;
 }
 
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
 .terminal-dot-red { background: #ff5f56; }
 .terminal-dot-yellow { background: #ffbd2e; }
 .terminal-dot-green { background: #27c93f; }
 
+/* For line numbers */
 .terminal.with-line-numbers {
   counter-reset: line;
   padding-left: 3.5rem;
@@ -161,7 +167,6 @@ html, body {
   color: #555;
   user-select: none;
 }
-
 /* ====================== AUTHOR CARD ====================== */
 .author-card {
   margin-top: 3rem;
@@ -191,21 +196,12 @@ html, body {
   text-align: center;
 }
 
-.back-to-blog a {
-  color: #0ff;
-  text-decoration: none;
-}
-
-.back-to-blog a:hover {
-  color: #bfa046;
-}
-
-/* ====================== RESPONSIVE ADJUSTMENTS ===== */
+/* ====================== RESPONSIVE ====================== */
 @media screen and (max-width: 768px) {
   .blog-post-page {
     padding: 2rem 1rem;
   }
-
+  
   .blog-wrapper {
     padding: 2rem;
   }
@@ -247,7 +243,7 @@ html, body {
 }
 
 .blog-card::before {
-  content: '';  
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -299,7 +295,7 @@ html, body {
   margin-left: 10px;
 }
 
-/* ===== BLOG GRID ===== */
+/* Add this if you want a responsive grid */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
